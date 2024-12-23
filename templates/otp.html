@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <link rel="stylesheet" href="/static/user.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>OTP Verification</h1>
+        <p>Enter the OTP sent to your email.</p>
+        <form action="/otp" method="POST">
+            <input type="number" name="otp" placeholder="Enter OTP" required>
+            <button type="submit">Verify OTP</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <link rel="stylesheet" href="/static/user.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>OTP Verification</h1>
+        <form action="{{ url_for('otp', otp=otp, username=username, mobile=mobile, email=email, address=address, password=password) }}" method="POST">
+            <p>Enter the OTP sent to your email:</p>
+            <input type="number" name="otp" placeholder="Enter OTP" required>
+            <button type="submit">Verify OTP</button>
+        </form>
+        <p>Didn't receive the OTP? <a href="#">Resend OTP</a></p>
+    </div>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+</head>
+<body>
+    <h1>OTP Verification</h1>
+    <form action="{{ url_for('otp', otp=otp, username=username, mobile=mobile, email=email, address=address, password=password) }}" method="POST">
+        <h5>Enter the OTP sent to your email</h5>
+        <input type="text" name="otp" required>
+        <button type="submit">Verify OTP</button>
+    </form>
+</body>
+</html>
+ -->

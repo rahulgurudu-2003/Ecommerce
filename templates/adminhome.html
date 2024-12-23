@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    {% if session.get('admin') %}
+        <h1>Welcome, {{ session['admin'] }}!</h1>  <!-- Display the admin's username -->
+    {% else %}
+        <h1>Welcome, Admin!</h1>
+    {% endif %}
+    
+    <p>You are logged in as an admin.</p>
+</body>
+</html>
+
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/admin_reg.css"> 
+  <div class="container">
+    <form class="login" method="POST">
+      <h3>Sign Up</h3>
+      
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <div class="flash-messages">
+            {% for message in messages %}
+              <center><b>{{ message }}</b></center>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+      
+      <input type="text" name="username" placeholder="Enter your Name" required>
+      <input type="text" name="mobile" placeholder="Enter Mobile Number" required>
+      <input type="email" name="email" placeholder="Enter your Email" required>
+      <input type="password" name="password" placeholder="Enter Password" required>
+      <input type="text" name="address" placeholder="Enter your Address" required>
+      
+      <button type="submit">Sign Up</button>
+      
+      <div class="login-link">
+        <a href="{{ url_for('adminlogin') }}">Already have an account?</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
