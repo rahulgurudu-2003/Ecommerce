@@ -16,6 +16,9 @@ user=os.environ['RDS_USERNAME']
 password=os.environ['RDS_PASSWORD']
 host=os.environ['RDS_HOSTNAME']
 port=os.environ['RDS_PORT']
+with mysql.connector.connect(host='host',user='user',password='password',db='db'):
+cursor=mydb.cursor(buffered=True)
+cursor.execute()
 
 # mydb=mysql.connector.connect(host='localhost',
 # user='root',
