@@ -19,6 +19,7 @@ port=os.environ['RDS_PORT']
 with mysql.connector.connect(host='host',user='user',password='password',db='db'):
 cursor=mydb.cursor(buffered=True)
 cursor.execute(CREATE TABLE `signup` (`username` varchar(30) DEFAULT NULL,`mobile` varchar(12) DEFAULT NULL,`email` varchar(50) DEFAULT NULL,`address` varchar(75) DEFAULT NULL,`password` text,UNIQUE KEY `email_2` (`email`),KEY `email` (`email`))
+cursor.executeCREATE TABLE `orders` (`order_id` bigint NOT NULL AUTO_INCREMENT,`itemid` varchar(30) NOT NULL, `item_name` longtext NOT NULL,`qty` int DEFAULT NULL,`total_price` bigint DEFAULT NULL, `user` varchar(100) DEFAULT NULL,  PRIMARY KEY (`order_id`),  KEY `user` (`user`), KEY `itemid` (`itemid`), CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user`) REFERENCES `signup` (`email`), CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`itemid`) REFERENCES `additems` (`itemid`))
 
 # mydb=mysql.connector.connect(host='localhost',
 # user='root',
