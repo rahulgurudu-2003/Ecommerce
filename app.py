@@ -18,15 +18,7 @@ host=os.environ['RDS_HOSTNAME']
 port=os.environ['RDS_PORT']
 with mysql.connector.connect(host='host',user='user',password='password',db='db'):
 cursor=mydb.cursor(buffered=True)
-cursor.execute(
-    CREATE TABLE `signup` (`username` varchar(30) DEFAULT NULL,`mobile` varchar(12) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL,
-  `address` varchar(75) DEFAULT NULL,
-  `password` text,
-  UNIQUE KEY `email_2` (`email`),
-  KEY `email` (`email`)
-)
-)
+cursor.execute(CREATE TABLE `signup` (`username` varchar(30) DEFAULT NULL,`mobile` varchar(12) DEFAULT NULL,`email` varchar(50) DEFAULT NULL,`address` varchar(75) DEFAULT NULL,`password` text,UNIQUE KEY `email_2` (`email`),KEY `email` (`email`))
 
 # mydb=mysql.connector.connect(host='localhost',
 # user='root',
